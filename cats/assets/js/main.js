@@ -53,32 +53,40 @@ cats.forEach(element => {
     element.opacity = element.eta / 100
     output.innerHTML += `<li> il nome del gatto è: ${element.nome} ede e di colore: ${element.colore} </li>`
 });
-
 // Milestone 2
-// Dividere i gatti in due contenitori distinti in base al sesso e aggiungere a fianco di ogni gattino un fiocco colorato di rosa,
-//  se femmina, o di blu, se maschio.
-//   Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio.
+// Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio,
+//  inserendo solamente nome e colore  e opacità del fiocco per ogni gatto.
 
 let output2 = document.getElementById("output2")
-
 const maschio = cats.filter((element) => element.sesso == "m");
 const femmina = cats.filter((element) => element.sesso == "f");
 
 maschio.forEach(element => {
-    element.fiocco = `<i class="fas fa-ribbon blue" style="opacity:${element.opacity};"></i>`
+    element.fiocco = `<i class="fas fa-ribbon " style="color:hsl(240, ${element.eta +30}%, 50%);;"></i>`
     output2.innerHTML += `<li> il nome del gatto è: ${element.nome} ede e di colore: ${element.colore} ed ha l'eta di ${element.eta} anni ${element.fiocco} </li>`
 });
 
 femmina.forEach(element => {
-    element.fiocco = `<i class="fas fa-ribbon pink" style="opacity:${element.opacity};"></i>`
+    element.fiocco = `<i class="fas fa-ribbon " style="color:hsl(350, ${element.eta+30}%, 88%);"></i>`
     output2.innerHTML += `<li> il nome del gatto è: ${element.nome} ede e di colore: ${element.colore} ed ha l'eta di ${element.eta} anni ${element.fiocco} </li>`
 });
 
 // Milestone 3
-// Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio,
-//  inserendo solamente nome e colore  e opacità del fiocco per ogni gatto.
+// Dividere i gatti in due contenitori distinti in base al sesso e aggiungere a fianco di ogni gattino un fiocco colorato di rosa,
+//  se femmina, o di blu, se maschio.
+//   Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio.
 
-let output3 = document.getElementById("output3")
+let output3 = document.getElementById("output3");
+
+maschio.forEach(element => {
+    element.fiocco = `<i class="fas fa-ribbon blue" style="opacity:${element.opacity};"></i>`
+    output3.innerHTML += `<li> il nome del gatto è: ${element.nome} ede e di colore: ${element.colore} ed ha l'eta di ${element.eta} anni ${element.fiocco} </li>`
+});
+
+femmina.forEach(element => {
+    element.fiocco = `<i class="fas fa-ribbon pink" style="opacity:${element.opacity};"></i>`
+    output3.innerHTML += `<li> il nome del gatto è: ${element.nome} ede e di colore: ${element.colore} ed ha l'eta di ${element.eta} anni ${element.fiocco} </li>`
+});
 
 // FUNCTION
 
