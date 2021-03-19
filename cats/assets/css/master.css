@@ -1,9 +1,9 @@
 .pink {
-    color: #ffc0cb;
+    color: hsl(350, 100%, 88%);
 }
 
 .blue {
-    color: #0000ff;
+    color: hsl(240, 100%, 50%);
 }
 
 ul {
